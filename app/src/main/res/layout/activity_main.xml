@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.MainActivity"
+    android:background="@color/black">
+
+<!--    <ScrollView-->
+<!--        android:id="@+id/container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Screenly"
+                    android:textSize="24sp"
+                    android:textColor="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Logout"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/yellowBlack"
+                    android:background="@drawable/rounder_corner"
+                    android:layout_marginStart="150dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="30dp"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white"
+                android:layout_marginHorizontal="20dp"/>
+
+
+            <HorizontalScrollView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/listMovieHorizontally"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="10"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="100"
+                        tools:listitem="@layout/movie_horizontally"/>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnUpdateMovie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update Movie"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="65dp"
+                    android:background="@drawable/rounded_box"
+                    android:backgroundTint="@color/yellow"
+                    android:layout_marginHorizontal="35dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Best of 2024"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_movie" />
+        </LinearLayout>
+
+
+<!--    </ScrollView>-->
+
+
+
+    <LinearLayout
+        android:id="@+id/bottomMenuNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/homeActivity"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/baseline_home_24"/>
+
+        <ImageView
+            android:id="@+id/addNewMovie"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/baseline_add_circle_24"
+            android:layout_marginHorizontal="60dp"/>
+
+        <ImageView
+            android:id="@+id/favoriteActivity"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/baseline_favorite_border_24"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

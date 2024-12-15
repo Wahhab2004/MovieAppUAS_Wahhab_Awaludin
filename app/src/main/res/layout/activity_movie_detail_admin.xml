@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageMovie"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/evil_dead_rise"
+            android:scaleType="centerCrop"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/titleMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul movie"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/yearMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="2024"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/genreMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="Thriller"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"/>
+
+
+            <TextView
+                android:id="@+id/durationMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="2.5h"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/descriptionMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:text="@string/deskripsi"/>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/backHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUpdateMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Movie"
+            android:drawableStart="@drawable/baseline_edit_square_22"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/rounder_corner"
+            android:backgroundTint="@color/yellow"
+            android:paddingHorizontal="20dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

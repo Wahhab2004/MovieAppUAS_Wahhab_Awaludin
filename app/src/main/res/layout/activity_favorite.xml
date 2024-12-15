@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Semua isi ScrollView harus dibungkus dalam satu view group -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Bagian header -->
+        <LinearLayout
+            android:id="@+id/textFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/backHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_arrow_back_ios_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favorite"
+                android:textSize="24sp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!-- Text Favorite 2 -->
+        <TextView
+            android:id="@+id/textFavorite2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="140dp"
+            android:drawablePadding="10dp"
+            android:text="Favorite"
+            android:drawableStart="@drawable/baseline_favorite_border_22"
+            android:background="@drawable/rounded_box"
+            android:backgroundTint="@color/yellow"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <!-- RecyclerView untuk daftar film -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            tools:listitem="@layout/item_movie_favorite"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2" />
+
+        <!-- Bottom Navigation -->
+        <LinearLayout
+            android:id="@+id/bottomMenuNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="15dp">
+
+            <ImageView
+                android:id="@+id/homeActivity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_home_24"
+                android:layout_marginHorizontal="60dp" />
+
+            <ImageView
+                android:id="@+id/favoriteActivity"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="60dp"
+                android:src="@drawable/baseline_favorite_border_24" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.MainActivity"
+    android:background="@color/black">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Screenly"
+                android:textSize="24sp"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/yellowBlack"
+                android:background="@drawable/rounder_corner"
+                android:layout_marginStart="120dp"
+                android:textColor="@color/white"
+                android:paddingHorizontal="30dp"
+                android:textSize="16sp"/>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/white"
+            android:layout_marginHorizontal="20dp"/>
+
+
+        <HorizontalScrollView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listMovieHorizontally"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="100"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="100"
+                    tools:listitem="@layout/movie_horizontally"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/detailMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_info_outline_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Detail"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnWatchNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Watch Now"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:paddingHorizontal="65dp"
+                android:background="@drawable/rounded_box"
+                android:backgroundTint="@color/yellow"
+                android:layout_marginHorizontal="35dp"/>
+
+            <LinearLayout
+                android:id="@+id/addMovieToFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_favorite_border_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add list"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Best of 2024"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="3"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/item_movie"
+            app:spanCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomMenuNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="15dp">
+
+        <ImageView
+            android:id="@+id/homeActivity"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/baseline_home_24"
+            android:layout_marginHorizontal="60dp"/>
+
+
+        <ImageView
+            android:id="@+id/favoriteActivity"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="60dp"
+            android:src="@drawable/baseline_favorite_border_24"/>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
